@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import {FormsModule} from "@angular/forms";
 import { NumberPipe } from './number.pipe';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { RandomIdService } from './random-id.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +15,10 @@ import { NumberPipe } from './number.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [RandomIdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

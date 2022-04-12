@@ -1,7 +1,37 @@
-<app-card
-  name="Card name"
-  number="0000 0000 0000 0000"
-  amount="4989,33₽"
-  expirationDate="02/33"
-  paymentSystem="visa"
-></app-card>
+<!--<app-card-->
+<!--  name="Card name"-->
+<!--  number="0000 0000 0000 0000"-->
+<!--  amount="4989,33₽"-->
+<!--  expirationDate="02/33"-->
+<!--  paymentSystem="visa"-->
+<!--&gt;</app-card>-->
+<p>{{ 24637423.123 | number:'ru-RU' }}</p> <!-- Результат: '24 637 423,123' -->
+<p>{{ 24637423.123 | number:'en-US' }}</p> <!-- Результат: '24,637,423.123' -->
+
+
+<form [formGroup]="userFormGroup">
+<div>
+  <label for="name">Name of product</label>
+  <input id="name" type="text" formControlName="name" />
+</div>
+  <div>
+    <label for="price">Price</label>
+    <input id="price" type="number" formControlName="price" />
+  </div>
+  <div class="field">
+    <label for="id">ID</label>
+    <input id="id" type="text" formControlName="id" />
+    <button type="button" (click)="onClickButton()">Generate ID </button>
+  </div>
+  <div>
+    <label for="categories">Categories</label>
+    <select id="categories" multiple formControlName="categories">
+      <option value="clothes">Одежда</option>
+      <option value="shoes">Обувь</option>
+      <option value="meds">Лекарства</option>
+      <option value="food">Еда</option>
+      <option value="electronics">Электроника</option>
+    </select>
+  </div>
+  <button type="submit" (click)="onSubmitButton()">Submit</button>
+</form>
